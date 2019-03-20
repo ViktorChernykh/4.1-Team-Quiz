@@ -1,6 +1,6 @@
 //
 //  Question.swift
-//  Personal Quiz
+//  Team Quiz
 //
 //  Created by Viktor on 14/03/2019.
 //  Copyright © 2019 Viktor Chernykh. All rights reserved.
