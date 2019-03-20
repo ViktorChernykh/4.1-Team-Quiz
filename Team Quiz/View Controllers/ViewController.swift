@@ -1,0 +1,16 @@
+//
+//  ViewController.swift
+//  Personal Quiz
+//
+//  Created by Viktor on 14/03/2019.
+//  Copyright © 2019 Viktor Chernykh. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
+    
+}
+
