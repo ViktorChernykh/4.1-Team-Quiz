@@ -11,7 +11,6 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultImageView: UIImageView!
-    
     @IBOutlet weak var resultDefinitionLabel: UILabel!
     
     var responses: [Answer]!
@@ -19,7 +18,6 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         calculateResult()
-
     }
     
     func calculateResult() {

@@ -10,43 +10,42 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    // MARK: - ... @IBOutlet
+    // MARK: - @IBOutlet
     @IBOutlet weak var questionLabel: UILabel!
-    
+
     @IBOutlet weak var singleStackView: UIStackView!
     @IBOutlet var singleButtons: [UIButton]!
-    
+
     @IBOutlet weak var multipleStackView: UIStackView!
     @IBOutlet var multiLabels: [UILabel]!
     @IBOutlet var multiSwitches: [UISwitch]!
-    
+
     @IBOutlet weak var rangedStackView: UIStackView!
     @IBOutlet weak var rangedSlider: UISlider!
     @IBOutlet var rangedLabels: [UILabel]!
-    
+
     @IBOutlet weak var questionProgressView: UIProgressView!
-    
-    // MARK: - ... Properties
+
+    // MARK: - Properties
     var answersChosen: [Answer] = []
     var questions: [Question]!
     var questionIndex = 0
 
-    // MARK: - ... UIViewController Methods
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         Question.loadData { questions in
             if let questions = questions {
                 self.questions = questions
             } else {
                 self.questions = Question.loadData()
             }
-            
             self.updateUI()
         }
     }
     
-    // MARK: - ... Custom Methods
+    // MARK: - Custom Methods
     func nextQuestion() {
         questionIndex += 1
         
@@ -54,8 +53,7 @@ class QuestionViewController: UIViewController {
             updateUI()
         } else {
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
-        }
-        
+        }  
     }
     
     func updateUI() {
@@ -111,7 +109,7 @@ class QuestionViewController: UIViewController {
         rangedLabels[1].text = answers.last?.text
     }
     
-    // MARK: - ... Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ResultsSegue" else { return }
         
@@ -119,7 +117,7 @@ class QuestionViewController: UIViewController {
         controller.responses = answersChosen
     }
     
-    // MARK: - ... @IBAction
+    // MARK: - @IBAction
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         let currentAnswers = questions[questionIndex].answers
         
