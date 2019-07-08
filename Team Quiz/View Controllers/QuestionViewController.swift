@@ -53,7 +53,7 @@ class QuestionViewController: UIViewController {
             updateUI()
         } else {
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
-        }  
+        }
     }
     
     func updateUI() {
